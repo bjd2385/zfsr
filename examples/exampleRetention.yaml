@@ -1,0 +1,40 @@
+- name: homePool
+  # These datasets will contain an indicator file as to whether or 
+  # not they were powered on at the time of the filesystem snapshot.
+  VMs:
+      - dataset: homePool/home/VMs/DC1
+        domain: DC
+      - dataset: homePool/home/VMs/SQL2016
+        domain: SQL2016
+      - dataset: homePool/home/VMs/UBUNTUSQL
+        domain: ubuntusql
+      - dataset: homePool/home/VMs/pfSense-main
+        domain: freebsd11.2_main_router
+      - dataset: homePool/UbuntuDesktopImage-1564214734-HIR
+        domain: bdoyle-pc-ubuntu
+  # These datasets are "regular," i.e. they're just going to be 
+  # snapshotted normally.
+  datasets:
+      - homePool/home/Downloads
+      - homePool/home/VMs/extra_disks
+      - homePool/home/keys
+      - homePool/home/lyftData
+      - homePool/home/ansiblePlaybooks
+  # Replication and offsite retention schedules.
+  replication:
+      - homePool/home/VMs/DC1
+      - homePool/home/VMs/SQL2016
+      - homePool/home/VMs/UBUNTUSQL
+      - homePool/home/VMs/pfSense-main
+      - homePool/UbuntuDesktopImage-1564214734-HIR
+      - homePool/home/VMs/extra_disks
+      - homePool/home/keys
+  # Set the retention period (in days) for the remote pool.
+  retention: 365
+- name: fastAccessPool
+  datasets:
+      - fastAccessPool/dataStorage
+      - fastAccessPool/logging
+  replication: 
+      - fastAccessPool/logging
+  retention: 365

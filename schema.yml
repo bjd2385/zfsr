@@ -1,0 +1,32 @@
+# Be *very* careful of indentation, here :(
+type: seq
+sequence:
+    - type: map
+      mapping:
+        "name":
+            type: str
+        "VMs":
+            type: seq
+            sequence:
+                - type: map
+                  mapping:
+                    "dataset":
+                        type:     str
+                        required: yes
+                    "domain":
+                        type:     str
+                        required: yes
+            required: no
+        "datasets":
+            type: seq
+            sequence:
+                - type: str
+            required: yes
+        "replication":
+            type: seq
+            sequence:
+                - type: str
+            required: yes
+        "retention":
+            type: int
+            required: yes

@@ -1,0 +1,18 @@
+package:
+  name: zfsretention
+  version: 1.0
+
+source:
+  git_rev: 6.7
+  git_url: 
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+about:
+  home: www.bjd2385.com
