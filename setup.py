@@ -4,7 +4,6 @@ Set up zfsretention for install.
 
 from setuptools import setup, find_packages
 
-
 setup(
     name='zfsr',
     version='1.0',
