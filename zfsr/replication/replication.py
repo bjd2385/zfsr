@@ -2,7 +2,9 @@
 Manage zpool replication to a secondary pool.
 """
 
-from .rollZFS import ManagePoolSnapshots
+from ..retention.rollZFS import PoolSnapshotManager
+
+from typing import List
 
 
 __all__ = [
@@ -10,7 +12,7 @@ __all__ = [
 ]
 
 
-class ZFSReplicator(ManagePoolSnapshots):
+class ZFSReplicator(PoolSnapshotManager):
     """
     Replicate my pool to another host (In my case, a U-NAS).
     """

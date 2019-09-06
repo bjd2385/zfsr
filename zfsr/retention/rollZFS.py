@@ -1,6 +1,3 @@
-#! /usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 Create / manage snapshots of my ZFS pool, in addition to replication.
 """
